@@ -24,6 +24,13 @@ const defaultRules = {
 };
 
 function initializeQueryBuilder(element, newRules) {
+    const plugins = [
+        'unique-filter',
+        'bt-checkbox',
+        'invert',
+        'not-group'
+    ];
+
     const filters = [{
         id: 'name',
         label: 'Name',
@@ -70,17 +77,18 @@ function initializeQueryBuilder(element, newRules) {
             format: /^.{4}-.{4}-.{4}$/
         }
     }];
-    
+
     const rules = newRules ? newRules : defaultRules;
-    $(element).queryBuilder({ filters, rules });
+    $(element).queryBuilder({ plugins, filters, rules });
 }
 
-class Home extends React.Component {
+class Endpoint extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            rules: {}
+            rules: {},
+            sql: ""
         };
     }
 
@@ -110,6 +118,12 @@ class Home extends React.Component {
         this.setState({ rules: newRules });
     }
 
+    getSQL = () => {
+        const sql = $(this.refs.queryBuilder).queryBuilder('getSQL');
+        this.setState({ sql: sql });
+        this.forceUpdate();
+    }
+
     render() {
         return (
             <div>
@@ -121,7 +135,14 @@ class Home extends React.Component {
                     <div className='col-md-4'>
                         <button className='btn btn-success' onClick={this.handleSetRulesClick.bind(this)}>SET RULES FROM REACT</button>
                     </div>
+                    <div className='col-md-4'>
+                        <button className='btn btn-success' onClick={this.getSQL.bind(this)}>GET SQL</button>
+                    </div>
                 </div>
+                <pre>
+                    SQL:
+                    {JSON.stringify(this.state.sql, undefined, 2)}
+                </pre>
                 <pre>
                     Component state:
                     {JSON.stringify(this.state.rules, undefined, 2)}
@@ -131,4 +152,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Endpoint;

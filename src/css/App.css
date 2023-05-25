@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #6B6570;
+}
+
+.form-container {
+  width: 400px;
+  background-color: #F7F0F0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-icon {
+  font-size: 4rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.submit-button, .close-button, .remove-button, .add-button {
+  padding: 8px 16px;
+  background-color: #323232;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+.submit-button:hover {
+  background-color: #A8DCD9;
+}
+
+.nameOfTable {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-color: #BFACC8;
+  width: 200px;
+  height: 20px;
+}
+
+.input-box {
+  border-radius: 10px;
+  border-color: #BFACC8;
+  width: 200px;
+  height: 20px;
+}
+
+.drop-menu {
+  border-radius: 10px;
+}
+
