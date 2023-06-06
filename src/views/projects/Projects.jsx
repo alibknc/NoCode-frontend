@@ -1,15 +1,28 @@
 import React, { useState } from "react";
-import "../../css/App.css"
+import axios from "axios";
+import "../../css/App.css";
 
 const Projects = () => {
   const [showForm, setShowForm] = useState(false);
   const [projectName, setProjectName] = useState("");
+  const [projects, setProjects] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Project Name:", projectName);
+    setProjects([...projects, projectName]);
     setShowForm(false);
     setProjectName("");
+
+    // Send a POST request to the backend with the submitted project information
+    try {
+      const response = await axios.post("/your-backend-url-here", {
+        projectName: projectName,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleClick = () => {
@@ -28,6 +41,11 @@ const Projects = () => {
           +
         </div>
       )}
+      <div className="card-container">
+        {projects.map((project) => (
+          <div className="card">{project}</div>
+        ))}
+      </div>
       {showForm && (
         <div className="form-container">
           <form onSubmit={handleSubmit}>

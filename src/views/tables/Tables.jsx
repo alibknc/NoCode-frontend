@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "../../css/App.css"
+import axios from "axios";
+import "../../css/App.css";
 
 const Tables = () => {
   const [showForm, setShowForm] = useState(false);
   const [formFields, setFormFields] = useState([{ name: "", type: "" }]);
   const [tableName, setTableName] = useState("");
   const [fieldTypes, setFieldTypes] = useState(["INT", "VARCHAR", "DATE"]);
+  const [tables, setTables] = useState([]);
 
   const handleFormChange = (event, index) => {
     let data = [...formFields];
@@ -13,13 +15,25 @@ const Tables = () => {
     setFormFields(data);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Table Name:", tableName);
     console.log("Form Fields:", formFields);
+    setTables([...tables, { tableName: tableName, formFields: formFields }]);
     setShowForm(false);
     setFormFields([{ name: "", type: "" }]); // Reset form fields to empty
     setTableName(""); // Reset table name to empty
+
+    // Send a POST request to the backend with the submitted table information
+    try {
+      const response = await axios.post("/your-backend-url-here", {
+        tableName: tableName,
+        formFields: formFields,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const addFields = () => {
@@ -54,6 +68,11 @@ const Tables = () => {
           +
         </div>
       )}
+      <div className="card-container">
+        {tables.map((table) => (
+          <div className="card">{table.tableName}</div>
+        ))}
+      </div>
       {showForm && (
         <div className="form-container">
           <input
@@ -77,13 +96,15 @@ const Tables = () => {
                     required
                   />
                   <select
-                          name="type"
-                          className="drop-btn"
+                    name="type"
+                    className="drop-btn"
                     onChange={(event) => handleFormChange(event, index)}
                     value={form.type}
                     required
                   >
-                    <option value="" className="drop-menu">Select Type</option>
+                    <option value="" className="drop-menu">
+                      Select Type
+                    </option>
                     {fieldTypes.map((type, idx) => (
                       <option key={idx} value={type}>
                         {type}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/auth.css"
+import "../../css/auth.css";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const Register = (props) => {
   };
 
   return (
-    <div className="auth-form-container">
+    <div className="auth-form-container Auth">
       <h2>Register</h2>
       <form className="register-form" onSubmit={handleSubmit}>
         <label htmlFor="name">User Name</label>
@@ -48,6 +48,6 @@ const Register = (props) => {
       </button>
     </div>
   );
-}
+};
 
 export default Register;
