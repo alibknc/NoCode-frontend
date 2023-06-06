@@ -96,3 +96,14 @@
   border-radius: 10px;
 }
 
+.card {
+  background-color: white;
+  font-size: 2rem;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+
