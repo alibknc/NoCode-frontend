@@ -1,0 +1,82 @@
+.main-content {
+    padding-left: 250px;
+}
+
+.base .card {
+    border-radius: 10px;
+}
+
+.base .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+
+.base .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.base .card p {
+    font-size: 16px;
+    color: #000;
+}
+
+.header-card span{
+    color: rgb(66, 66, 66);
+    opacity: 0.7;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.media-body h5 {
+    font-weight: bold;
+}
+
+.container h2{
+    color: white;
+    padding-bottom: 25px;
+}
+
+#details-title{
+    color: black;
+}
+
+.details-card h3{
+    color: black;
+    padding-bottom: 10px;
+}
+
+.subtitle{
+    color: rgba(102, 102, 102, 0.7);
+}
+
+.details-card input {
+    width: 25%;
+}
+
+#username{
+    padding-left: 10px;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 5px solid;
+    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-radius: 50%;
+    animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
