@@ -1,14 +1,26 @@
 # Hr Management - Frontend
 ## Ekran Görüntüleri
 
-### Ana Sayfa
-![Ana Sayfa](https://github.com/alibknc/HrManagementApp-Frontend/blob/main/screenshots/1.png?raw=true)
+### Login
+![Login](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/login.png)
 
-### Yeni Çalışan
-![Yeni Çalışan](https://github.com/alibknc/HrManagementApp-Frontend/blob/main/screenshots/2.png?raw=true)
+### Projeler
+![Projeler](https://github.com/alibknc/NoCode-frontend/blob/master/screenshots/projects.png?raw=true)
 
-### Yeni İzin
-![Yeni İzin](https://github.com/alibknc/HrManagementApp-Frontend/blob/main/screenshots/3.png?raw=true)
+### Yeni Proje
+![Yeni Proje](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/newproject.png)
 
-### Yeni Harcama
-![Yeni Harcama](https://github.com/alibknc/HrManagementApp-Frontend/blob/main/screenshots/4.png?raw=true)
+### Tablolar
+![Tablolar](https://github.com/alibknc/NoCode-frontend/blob/master/screenshots/tables.png?raw=true)
+
+### Yeni Tablo
+![Yeni Tablo](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/newtable.png)
+
+### Tablo Detay
+![Tablo Detay](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/table.png)
+
+### Endpointler
+![Endpointler](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/endpoints.png)
+
+### Yeni Endpoint
+![Yeni Endpoint](https://raw.githubusercontent.com/alibknc/NoCode-frontend/master/screenshots/newendpoint.png)
