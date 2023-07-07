@@ -1,4 +1,4 @@
-# Hr Management - Frontend
+# NoCode Platform - Frontend
 ## Ekran Görüntüleri
 
 ### Login
